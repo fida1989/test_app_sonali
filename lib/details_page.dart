@@ -13,10 +13,18 @@ class DetailsPage extends StatelessWidget {
         // the App.build method, and use it to set our appbar title.
         title: const Text("1234"),
       ),
-      body: Container(
-        color: Colors.white,
-        child: Text(title!),
+      body: GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 6,
       ),
+      itemCount: 30,
+      itemBuilder: (BuildContext context, int index) {
+        return Card(
+          color: Colors.amber,
+          child: Center(child: Text('Hello$index')),
+        );
+      }
+    ),
       
     );
   }
