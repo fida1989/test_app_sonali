@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_app_sonali/class6/class6_page.dart';
-import 'package:test_app_sonali/details_page.dart';
-import 'class7/class7_page.dart';
-import 'home_page.dart';
-
+import 'package:test_app_sonali/class8/first_page.dart';
+import 'class8/class8_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -18,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Class7Page(),
+      home: const Class8Page(),
     );
   }
 }
