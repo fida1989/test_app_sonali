@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:test_app_sonali/class11/class11_page.dart';
 import 'class10/class10_page.dart';
-void main() {
+import 'utils/object_box.dart';
+
+
+/// Provides access to the ObjectBox Store throughout the app.
+late ObjectBox objectbox;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  objectbox = await ObjectBox.create();
   runApp(const MyApp());
 }
 
@@ -14,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Class10Page(),
+      home: const Class11Page(),
     );
   }
 }
