@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:test_app_sonali/class11/class11_page.dart';
 import 'package:test_app_sonali/class12/class12_view.dart';
 import 'class10/class10_page.dart';
+import 'class13/class13_page.dart';
+import 'class13/class13_page_builder.dart';
 import 'utils/object_box.dart';
 
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Class12View(),
+      home: const Class13BuilderPage(),
     );
   }
 }
