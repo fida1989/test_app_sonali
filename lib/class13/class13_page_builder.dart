@@ -14,19 +14,43 @@ class _Class13BuilderPageState extends State<Class13BuilderPage> {
     debugPrint("main build");
     return Scaffold(
       body: Center(
-        child: AsyncBuilder<String>(
-          future: getData(),
-          waiting: (context) => const Text('Loading...'),
-          builder: (context, value) => Text('$value'),
-          error: (context, error, stackTrace) => Text('Error! $error'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AsyncBuilder<String>(
+              future: getData1(),
+              waiting: (context) => const Text('Loading...'),
+              builder: (context, value) {
+                 debugPrint("builder 1");
+                return Text('$value');
+              },
+              error: (context, error, stackTrace) => Text('Error! $error'),
+            ),
+            AsyncBuilder<String>(
+              future: getData2(),
+              waiting: (context) => const Text('Loading...'),
+              builder: (context, value) {
+                debugPrint("builder 2");
+                return Text('$value');
+              },
+              error: (context, error, stackTrace) => Text('Error! $error'),
+            ),
+          ],
         ),
       ),
     );
   }
 
-  Future<String> getData() {
+  Future<String> getData1() {
     return Future.delayed(const Duration(seconds: 3), () {
-      return "I am data";
+      return "I am data 1";
+      // throw Exception("Custom Error");
+    });
+  }
+
+  Future<String> getData2() {
+    return Future.delayed(const Duration(seconds: 6), () {
+      return "I am data 2";
       // throw Exception("Custom Error");
     });
   }
